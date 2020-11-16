@@ -1,0 +1,157 @@
+/* banner-home */
+
+.title {
+  position: absolute;
+  left: 60px;
+  bottom: 70px;
+}
+
+.title h1 {
+  color: white;
+  font-size: 45px;
+}
+
+/* bio section */
+
+.bio {
+  padding: 1em;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  max-width: 900px;
+}
+
+.bio p {
+  text-align: center;
+}
+
+/* new single section */
+
+.single-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  background-color: pink;
+}
+
+.single {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.coverart {
+  width: 50%;
+  max-width: 400px;
+}
+
+.coverart img {
+  width: 100%;
+}
+
+.single-caption{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.single-caption h2 {
+  padding-bottom: 1em;
+}
+
+.listen-now {
+  width: 65%;
+  align-self: center;
+}
+
+/* gallery */
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.one-and-two {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.one,
+.two,
+.three {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+}
+
+.three {
+  width: 35%;
+  max-height: 800px
+}
+
+.gallery-pic {
+  object-fit: cover;
+  overflow: hidden;
+  with: 100%;
+}
+
+.playlist-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+
+/* TEMPERARY */
+
+.playlist-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+}
+
+.playlist{
+  display: none;
+}
+
+.playlist-container:hover .playlist{
+  position: absolute;
+  display: flex;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+
+.playlist-cover {
+  object-fit: cover;
+  overflow: hidden;
+  with: 100%;
+}
+
+@media only screen and (min-width: 640px) and (max-width: 1200px) {
+  .playlist-container {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .playlist-container {
+    width: 33.3333%;
+  }
+}

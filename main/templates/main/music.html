@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/music.css' %}"/>
+{% endblock %}
+
+{% block banner %}
+  <div class="title">
+    <h1>MUSIC</h1>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="page">
+
+      {% for name, id, image in albums %}
+
+        <div class="playlist-container">
+
+          <img class='playlist-cover' src="{{image}}" alt="{{name}}">
+
+          <iframe class='playlist' src="https://open.spotify.com/embed/album/{{id}}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+        </div>
+
+      {% endfor %}
+
+  </div>
+{% endblock %}

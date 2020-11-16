@@ -1,0 +1,78 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+{% endblock %}
+
+{% block banner %}
+
+  <div class="title">
+    <h1>MILKY DAY</h1>
+  </div>
+
+  <img class="gallery-pic" src="{% static 'img/banner/hope.jpg' %}"/>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="page">
+
+
+      <div class="bio">
+        <p>The Milky Way is the galaxy that contains our Solar System, with the name describing the galaxy's appearance from Earth: a hazy band of light seen in the night sky formed from stars that cannot be individually distinguished by the naked eye. The term Milky Way is a translation of the Latin via lactea, from the Greek γαλαξίας κύκλος (galaxías kýklos, "milky circle").[18][19][20] From Earth, the Milky Way appears as a band because its disk-shaped structure is viewed from within.</p>
+      </div>
+
+      <div class="single-container">
+        <div class="single">
+
+
+          <div class="coverart">
+            <img src="{{new_single.image}}" alt="album cover">
+          </div>
+
+          <div class="single-caption">
+            <h2>{{new_single.name}}</h2>
+            <button class="listen-now" type="button" name="button">LISTEN NOW</button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="gallery">
+
+        <div class="one-and-two">
+          <div class="one">
+            <img class="gallery-pic" src="{% static 'img/gallery/pantry.JPG' %}"/>
+          </div>
+          <div class="two">
+            <img class="gallery-pic" src="{% static 'img/gallery/bw-producing-two.JPG' %}"/>
+          </div>
+        </div>
+
+        <div class="three">
+          <img class="gallery-pic" src="{% static 'img/gallery/no-milky.jpeg' %}"/>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="playlist-gallery">
+
+      {% for name, id, image in playlists %}
+
+        <div class="playlist-container">
+
+          <img class='playlist-cover' src="{{image}}" alt="{{name}}">
+
+          <iframe class='playlist' src="https://open.spotify.com/embed/playlist/{{id}}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+{% endblock %}

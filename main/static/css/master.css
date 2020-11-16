@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  /*color: #5D6063;*/
+  background-color: #ffffff;
+}
+
+p a:link,
+p a:visited {
+  color:  #ad5f84; /* magenta */
+  text-decoration: none;
+}
+
+p a:hover,
+p a:visited:hover,
+p a:active,
+p a:visited:active {
+  color: #242e75; /* dark navy */
+}
+
+/* Header */
+.banner  {
+  display: flex;
+  justify-content: center;
+  /* padding-bottom: 10em;*/
+  position: relative;
+  background-color: pink;
+  height: 450px;
+  width: 100%;
+}
+
+nav {
+  position: absolute;
+  padding-top: 1em;
+  top: 0;
+  left: 0;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.menu li {
+  list-style-type: none;
+
+  width: 100%;
+  padding-top: .1em;
+  padding-bottom: .1em;
+  padding-left: 1em;
+  font-size: 18px;
+}
+
+.menu a:link,
+.menu a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.menu a:hover,
+.menu a:visited:hover,
+.menu a:active,
+.menu a:visited:active {
+  color: pink;
+  /* text-decoration: underline; */
+}
+
+.title {
+  position: absolute;
+  left: 60px;
+  bottom: 70px;
+}
+
+.title h1 {
+  color: white;
+  font-size: 45px;
+}
+
+/* page-base */
+
+.page {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+
+/* footer */
+
+footer {
+  padding: 3em;
+  background-color:	pink;
+}
+
+
+@media only screen and (min-width: 750px) {
+  .menu {
+
+  }
+  .menu li {
+    width: auto;
+    padding-top: .3em;
+    padding-bottom: .3em
+    /* border-bottom: none; */
+  }
+
+  .menu li:nth-of-type(2n) {
+    border-left: none;
+  }
+
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Milky Day</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/master.css' %}"/>
+
+    {% block style %}
+    {% endblock %}
+
+  </head>
+
+  <body>
+    <header class="banner">
+
+      <nav class="menu">
+        <ul>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/music">Music</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+        </ul>
+      </nav>
+
+      {% block banner %}
+
+      {% endblock %}
+
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <footer>
+      Here is a foooter.
+    </footer>
+
+  </body>
