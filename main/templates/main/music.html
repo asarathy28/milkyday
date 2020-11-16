@@ -16,13 +16,19 @@
 
       {% for name, id, image in albums %}
 
-        <div class="playlist-container">
+        {% if id == '48VgfVUE1xE5pRUMVAXyeL' %}
 
-          <img class='playlist-cover' src="{{image}}" alt="{{name}}">
+        {% else %}
 
-          <iframe class='playlist' src="https://open.spotify.com/embed/album/{{id}}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <div class="playlist-container">
 
-        </div>
+            <img class='playlist-cover' src="{{image}}" alt="{{name}}">
+
+            <iframe class='playlist' src="https://open.spotify.com/embed/album/{{id}}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+          </div>
+
+        {% endif %}
 
       {% endfor %}
 

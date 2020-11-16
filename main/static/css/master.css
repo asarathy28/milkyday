@@ -36,7 +36,7 @@ p a:visited:active {
   /* padding-bottom: 10em;*/
   position: relative;
   background-color: pink;
-  height: 450px;
+  height: 400px;
   width: 100%;
 }
 
@@ -79,11 +79,13 @@ nav {
 
 .title {
   position: absolute;
-  left: 60px;
-  bottom: 70px;
+  left: 60%;
+  bottom: 90px;
+  max-width: 30vw;
 }
 
 .title h1 {
+  text-align: right;
   color: white;
   font-size: 45px;
 }
@@ -107,9 +109,13 @@ footer {
 
 
 @media only screen and (min-width: 750px) {
-  .menu {
 
+  .title {
+    position: absolute;
+    left: 65%;
+    bottom: 70px;
   }
+
   .menu li {
     width: auto;
     padding-top: .3em;

@@ -3,6 +3,10 @@
 
 {% block style %}
   <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+
+  <style media="screen">
+
+  </style>
 {% endblock %}
 
 {% block banner %}
@@ -11,7 +15,7 @@
     <h1>MILKY DAY</h1>
   </div>
 
-  <img class="gallery-pic" src="{% static 'img/banner/hope.jpg' %}"/>
+  <img class="gallery-pic" src="{% static 'img/gallery/pantry.JPG' %}"/>
 
 {% endblock %}
 
@@ -44,7 +48,7 @@
 
         <div class="one-and-two">
           <div class="one">
-            <img class="gallery-pic" src="{% static 'img/gallery/pantry.JPG' %}"/>
+            <img class="gallery-pic" src="{% static 'img/banner/hope.jpg' %}"/>
           </div>
           <div class="two">
             <img class="gallery-pic" src="{% static 'img/gallery/bw-producing-two.JPG' %}"/>
@@ -61,17 +65,24 @@
 
     <div class="playlist-gallery">
 
-      {% for name, id, image in playlists %}
+      <div class="playlist-title">
+        <h1>PLAYLISTS</h1>
+      </div>
 
-        <div class="playlist-container">
 
-          <img class='playlist-cover' src="{{image}}" alt="{{name}}">
+        {% for name, id, image in playlists %}
 
-          <iframe class='playlist' src="https://open.spotify.com/embed/playlist/{{id}}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <div class="playlist-container">
 
-        </div>
+            <img class='playlist-cover' src="{{image}}" alt="{{name}}">
 
-      {% endfor %}
+            <iframe class='playlist' src="https://open.spotify.com/embed/playlist/{{id}}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+          </div>
+
+        {% endfor %}
+
+=
 
     </div>
 

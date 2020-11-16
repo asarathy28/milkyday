@@ -36,7 +36,7 @@ class Music():
             self.pl_image.append(t['images'][0]['url'])
             self.pl_description.append(t['description'])
 
-        self.albums = self.sp.artist_albums('7FIqXqYZHMomTAcTXF4UHu',album_type=None, country='US', limit=None, offset=0)
+        self.albums = self.sp.artist_albums('7FIqXqYZHMomTAcTXF4UHu', album_type=('single','ablum'), country='US', limit=None, offset=0)
 
         self.album_name = []
         self.album_id = []
@@ -64,12 +64,21 @@ class Music():
         print(f"{self.ns_name}, {self.ns_image}")
 
 
+    def print_albums (self):
+        for i, name in enumerate(self.album_name):
+            id = self.album_id[i]
+            image = self.album_image[i]
+
+            print(f"{name}, {id}, image link {image}")
+
 
 test = Music()
 
-test.print_ns()
+#test.print_ns()
 
-test.print_playlist()
+#test.print_playlist()
+
+test.print_albums()
 
 
 
