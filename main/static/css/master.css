@@ -36,7 +36,7 @@ p a:visited:active {
   /* padding-bottom: 10em;*/
   position: relative;
   background-color: pink;
-  height: 400px;
+  height: 500px;
   width: 100%;
 }
 
@@ -111,6 +111,21 @@ nav {
 footer {
   padding: 3em;
   background-color:	pink;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials img {
+  height: 21px;
+  width: 21px;
+}
+
+.social-spacer {
+  padding: 5px;
 }
 
 

@@ -40,8 +40,8 @@
   display: flex;
   justify-content: center;
   position: relative;
-  width: 95vw;
-  height: 95vw;
+  width: 90vw;
+  height: 90vw;
   max-height: 350px;
   max-width: 350px;
 }
@@ -63,16 +63,14 @@
   overflow: hidden;
   with: 100%;
 }
-/*
-@media only screen and (min-width: 640px) and (max-width: 1200px) {
-  .album-container {
-    width: 50%;
-  }
-}
 
-@media only screen and (min-width: 640px) {
-  .album-container {
-    width: 33.3333%;
+@media only screen and (max-width: 740px) {
+  .unit-padding {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .album-border {
+    padding: 5vw;
   }
 }
-*/
