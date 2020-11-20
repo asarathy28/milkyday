@@ -188,27 +188,31 @@
     z-index: 3;
     justify-content: center;
     align-items: center;
-    background-color:#c0c0c0;
-    color:#585858;
-    padding: 1.5em;
+
     width:0.25em;
     height:0.25em;
     border-radius:0.63em;
     border: 0;
 }
 #scroll-left:hover, #scroll-right:hover {
-    background-color: #585858;
     z-index: 3;
-    color:#fff;
     cursor:pointer;
 }
 
 #scroll-left {
-    left:10px;
+    left:15px;
 }
 #scroll-right {
-    right:10px;
+    right:15px;
 }
+
+
+
+#scroll-left img, #scroll-right img {
+  height: 50px;
+  width: 20px;
+}
+
 
 @media only screen and (max-width: 740px) {
   /* mobile */

@@ -5,7 +5,7 @@
         parent = $("#carousel");
 
     //Start the scrolling process
-    $(".panner").on("mouseenter", function () {
+    $(".panner").on("mousedown", function () {
         var data = $(this).data('scrollModifier'),
             direction = parseInt(data, 10);
 
@@ -15,7 +15,7 @@
     });
 
     //Kill the scrolling
-    $(".panner").on("mouseleave", function () {
+    $(".panner").on("mouseup", function () {
         stopScrolling();
         $(this).removeClass('active');
     });
