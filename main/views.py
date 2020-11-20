@@ -1,5 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .milky_spotify import Music
+from .forms import ContactForm
+from django.core.mail import send_mail
+from django.conf import settings
+from django.template.loader import render_to_string
+
 
 # Create your views here.
 def home(request):
@@ -22,4 +27,31 @@ def music(request):
 
 def portfolio(request):
 
-    return render(request, "main/portfolio.html", {})
+    form = ContactForm()
+
+    if request.method == 'POST':
+        print(request.POST)
+        form = ContactForm(request.POST)
+        if form.is_valid():
+
+            name = request.POST['name']
+            subject = request.POST['subject']
+            message = request.POST['message']
+            email =request.POST['email']
+
+
+            context = {'subject':subject, 'message':message, 'name':name, 'email':email}
+            template = render_to_string('main/email-temp.html', context)
+
+            send_mail(f'{name} : {subject}', message, settings.EMAIL_HOST_USER, ['milkyday99@gmail.com'], fail_silently=False)
+
+            form.save()
+
+            return redirect('../home/')
+    else:  # 5
+        # Create an empty form instance
+        form = ContactForm()
+
+    context = {'form':form}
+
+    return render(request, "main/portfolio.html", context)

@@ -3,10 +3,6 @@
 
 {% block style %}
   <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
-
-  <style media="screen">
-
-  </style>
 {% endblock %}
 
 {% block banner %}
@@ -15,7 +11,7 @@
     <h1>MILKY DAY</h1>
   </div>
 
-  <img class="gallery-pic" src="{% static 'img/gallery/pantry.JPG' %}"/>
+  <img class="gallery-pic" src="{% static 'img/banner/dark-milky.png' %}"/>
 
 {% endblock %}
 
@@ -37,7 +33,7 @@
           </div>
 
           <div class="single-caption">
-            <h2>{{new_single.name}}</h2>
+            <h1>{{new_single.name}}</h1>
             <button class="listen-now" type="button" name="button">LISTEN NOW</button>
           </div>
 
@@ -48,7 +44,7 @@
 
         <div class="one-and-two">
           <div class="one">
-            <img class="gallery-pic" src="{% static 'img/banner/hope.jpg' %}"/>
+            <img class="gallery-pic" src="{% static 'img/gallery/pantry.JPG' %}"/>
           </div>
           <div class="two">
             <img class="gallery-pic" src="{% static 'img/gallery/bw-producing-two.JPG' %}"/>
@@ -69,21 +65,51 @@
         <h1>PLAYLISTS</h1>
       </div>
 
+      <div class="carousel" id="carousel">
+
+
+        <button type="button" class="panner" id="scroll-left" data-scroll-modifier='-1'>
+          &lt;
+        </button>
+
 
         {% for name, id, image in playlists %}
 
-          <div class="playlist-container">
+        <div class="spacer">
+        </div>
 
-            <img class='playlist-cover' src="{{image}}" alt="{{name}}">
+          <div class="playlist-border">
 
-            <iframe class='playlist' src="https://open.spotify.com/embed/playlist/{{id}}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <div class="playlist-container">
 
+              <img class='playlist-cover' src="{{image}}" alt="{{name}}">
+
+              <iframe class='playlist' src="https://open.spotify.com/embed/playlist/{{id}}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+            </div>
+
+          </div>
+
+          <div class="spacer">
           </div>
 
         {% endfor %}
 
-=
+        <button type="button" class="panner" id="scroll-right" data-scroll-modifier='1'>
+          <p>&gt;</p>
+        </button>
+
+
+      </div>
 
     </div>
+
+
+{% endblock %}
+
+{% block js %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="{% static 'js/panner.js' %}"></script>
 
 {% endblock %}

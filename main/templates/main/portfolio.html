@@ -1,2 +1,76 @@
 {% extends 'main/base.html' %}
 {% load static %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/portfolio.css' %}"/>
+{% endblock %}
+
+{% block banner %}
+  <div class="title">
+    <h1>PORTFOLIO</h1>
+  </div>
+{% endblock %}
+
+{% block content %}
+<div class="page">
+
+  <div class="tab-container">
+    <!-- Tab links -->
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'Production')" id="defaultOpen">PRODUCTION</button>
+        <button class="tablinks" onclick="openTab(event, 'Mixing')">MIXING</button>
+      <button class="tablinks" onclick="openTab(event, 'Features')">FEATURES</button>
+    </div>
+
+    <!-- Tab content -->
+    <div class="content-container">
+
+      <div id="Production" class="tabcontent">
+        <h3>Production</h3>
+        <p>London is the capital city of England.</p>
+      </div>
+
+      <div id="Mixing" class="tabcontent">
+        <h3>Mixing</h3>
+        <p>Paris is the capital of France.</p>
+      </div>
+
+      <div id="Features" class="tabcontent">
+        <h3>Features</h3>
+        <p>Tokyo is the capital of Japan.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="contact-container">
+    <div class="form-intro">
+      <h1>Get In Touch</h1>
+
+      <p>CDC in the early stages released information regarding the number of cases and people under investigation that was updated regularly on Mondays, Wednesdays, and Fridays. Other random text. Leave me a message!</p>
+    </div>
+
+    <form class="contact-form" action="" method="post">
+
+      {% csrf_token %}
+
+      <ul class="form-row">
+
+        {{form.as_ul}}
+
+        <li><button type="submit">Send</button></li>
+
+      </ul>
+
+    </form>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block js %}
+
+  <script src="{% static 'js/portfolio.js' %}"></script>
+
+{% endblock %}

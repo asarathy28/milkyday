@@ -72,13 +72,13 @@ class Music():
             print(f"{name}, {id}, image link {image}")
 
 
-test = Music()
+#test = Music()
 
 #test.print_ns()
 
 #test.print_playlist()
 
-test.print_albums()
+#test.print_albums()
 
 
 

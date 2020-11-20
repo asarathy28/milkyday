@@ -14,23 +14,35 @@
 {% block content %}
   <div class="page">
 
+    <div class="album-gallery">
+
       {% for name, id, image in albums %}
 
         {% if id == '48VgfVUE1xE5pRUMVAXyeL' %}
 
         {% else %}
 
-          <div class="playlist-container">
+          <div class="unit-padding">
 
-            <img class='playlist-cover' src="{{image}}" alt="{{name}}">
+            <div class="album-border">
 
-            <iframe class='playlist' src="https://open.spotify.com/embed/album/{{id}}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              <div class="album-container">
+
+                <img class='album-cover' src="{{image}}" alt="{{name}}">
+
+                <iframe class='album' src="https://open.spotify.com/embed/album/{{id}}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+              </div>
+
+            </div>
 
           </div>
 
         {% endif %}
 
       {% endfor %}
+
+    </div>
 
   </div>
 {% endblock %}

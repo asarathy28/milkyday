@@ -23,10 +23,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '4jtj#tdndxgx5czt()s_=u_a_ss3ozz30vte0*p=b&!8@tt3vz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['milkyday.herokuapp.com', '127.0.0.1' ]
 
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_HOST_USER = 'admin@ajaysarathy.com'
+EMAIL_HOST_PASSWORD = 'Personal$ite'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Application definition
 
