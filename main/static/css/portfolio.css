@@ -6,7 +6,7 @@
   padding-left: 1em;
   padding-right: 1em;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
 }
 
 .tab {
@@ -57,26 +57,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 200px;
-  padding-left: 1em;
-  padding-right: 1em;
+  background-color: pink;
+  margin-bottom: 4em;
   width: 100%;
   max-width: 1000px;
-  border: 1px solid black;
 }
 
 .form-intro {
   width: 100%;
+  padding-bottom: 2em;
 }
 
 .contact-form {
-  background-color: #F6F7F8;
-  border: 1px solid #D6D9DC;
-  border-radius: 3px;
-
+  background-color: #f1f1f1;
   width: 100%;
   padding: 50px;
-  margin: 0 0 40px 0;
 }
 
 .form-row li {
@@ -91,34 +86,29 @@
 .form-row li input[type='text'],
 .form-row li input[type='email'] {
   background-color: #FFFFFF;
-  border: 1px solid #D6D9DC;
+  border: 0;
   border-radius: 3px;
   width: 100%;
   padding: 7px;
 
-  font-family: 'Sorts Mill Goudy', serif;
-  font-weight: 400;
-  font-size: 14px;
   color: #5D6063;
   /* border: 1px solid BLUE; */
 }
 
 .form-row li label {
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   /* border: 1px solid GREEN; */
 }
 
 .form-row li textarea {
   width: 100%;
 
-  font-family: 'Sorts Mill Goudy', serif;
-  font-weight: 400;
   color: #5D6063;
   font-size: 14px;
 
-  border: 1px solid #D6D9DC;
+  border: 0;
   border-radius: 3px;
-
+  width: 100%;
   min-height: 200px;
   margin-bottom: 10px;
   padding: 7px;
@@ -148,22 +138,22 @@
 }
 
 @media only screen and (min-width: 640px) {
-  .form-row li {
-    flex-direction: row;
-    align-items: flex-start; /* To avoid stretching */
-    margin-bottom: 20px;
+
+  .contact-container {
+    padding: 4em;
+    width: 100%;
+    max-width:800px;
   }
 
-  .form-row li input[type='text'],
-  .form-row li input[type='email']{
-    width: 300px;
-    height: initial;
+  .form-intro {
+    width: 100%;
+    padding-bottom: 3em;
   }
 
-  .form-row li label {
-    text-align: right;
-    width: 120px;
-
-    padding-right: 20px;
+  .contact-form {
+    background-color: #f1f1f1;
+    width: 100%;
+    padding: 4em;
   }
+
 }
