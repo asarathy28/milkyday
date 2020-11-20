@@ -181,6 +181,10 @@
 }
 
 /* scroll arrows */
+.panner {
+  width: auto;
+  background-color: transparent;
+}
 
 #scroll-left, #scroll-right {
     display: flex;
@@ -188,9 +192,6 @@
     z-index: 3;
     justify-content: center;
     align-items: center;
-
-    width:0.25em;
-    height:0.25em;
     border-radius:0.63em;
     border: 0;
 }
