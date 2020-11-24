@@ -19,7 +19,7 @@
   width: 100%;
   padding-top: 4em;
   padding-bottom: 4em;
-  background-color: pink;
+  background-color: #292929; /* dark grey */
 }
 
 .single {
@@ -41,26 +41,36 @@
 .single-caption{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px black solid;
+}
+
+.single-caption h2 {
+  color: white;
+  font-size: 30px;
 }
 
 .single-caption h1 {
   color: white;
   font-size: 6vw;
   padding-bottom: 0.5em;
+  border: 1px black solid;
 }
 
 .listen-now {
   font-size: 2vw;
   padding: 2em;
   align-self: center;
-  border: 0;
+  border: 1px black solid;
 }
 
 .listen-now:hover {
   background-color: #585858;
   color:#fff;
 }
+
+
 
 /* gallery */
 
@@ -144,7 +154,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: pink;
+  background: #292929; /* dark grey */
   padding: 2em;
 }
 

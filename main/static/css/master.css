@@ -16,26 +16,13 @@ body {
   background-color: #ffffff;
 }
 
-p a:link,
-p a:visited {
-  color:  #ad5f84; /* magenta */
-  text-decoration: none;
-}
-
-p a:hover,
-p a:visited:hover,
-p a:active,
-p a:visited:active {
-  color: #242e75; /* dark navy */
-}
-
 /* Header */
 .banner  {
   display: flex;
   justify-content: center;
   /* padding-bottom: 10em;*/
   position: relative;
-  background-color: pink;
+  background-color: #292929; /* dark grey */
   height: 500px;
   width: 100%;
 }
@@ -110,7 +97,7 @@ nav {
 
 footer {
   padding: 3em;
-  background-color:	pink;
+  background-color:	#292929; /* dark grey */
 }
 
 .socials {

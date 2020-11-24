@@ -32,14 +32,14 @@
 }
 
 .tab button.active {
-  background-color: pink;
+  background-color: grey;
 }
 
 .content-container  {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: pink;
+  background: grey;
   padding: 3em;
 }
 
@@ -59,7 +59,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: pink;
+  background-color: grey;
   margin-bottom: 4em;
   width: 100%;
   max-width: 1000px;
@@ -67,17 +67,22 @@
 
 .form-intro {
   width: 100%;
-  padding-bottom: 2em;
+  margin-bottom: 20px;
+}
+
+.form-intro h1 {
+  margin-bottom: 10px;
 }
 
 .contact-form {
-  background-color: #f1f1f1;
+  background-color: grey;
   width: 100%;
   padding: 50px;
+  color: white;
 }
 
 .form-row li {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -128,32 +133,33 @@
   border-radius: 3px;
 
   padding: 10px 40px;
+  margin-bottom: 0;
   cursor: pointer;
 }
 
 .form-row li button:hover {
   background-color: #76AEED;
+  margin-bottom: 0;
 }
 
 .form-row li button:active {
   background-color: #407FC7;
+  margin-bottom: 0;
 }
 
 @media only screen and (min-width: 640px) {
 
   .contact-container {
-    padding: 4em;
+    padding: 1em;
     width: 100%;
     max-width:800px;
   }
 
   .form-intro {
     width: 100%;
-    padding-bottom: 3em;
   }
 
   .contact-form {
-    background-color: #f1f1f1;
     width: 100%;
     padding: 4em;
   }
