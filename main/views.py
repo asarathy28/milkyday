@@ -55,3 +55,6 @@ def portfolio(request):
     context = {'form':form}
 
     return render(request, "main/portfolio.html", context)
+
+def merch(request):
+    return render(request, "main/merch.html", {})
