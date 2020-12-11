@@ -7,6 +7,10 @@
   width: 100%;
   padding-top: 2em;
   padding-bottom: 2em;
+  margin-left: 130px;
+  margin-right: 130px;
+  /*border-left: solid grey 1px;
+  border-right: solid grey 1px;*/
 }
 
 .unit-padding {
@@ -14,7 +18,11 @@
   justify-content: center;
   align-items: center;
   background: white;
-  padding: 2em;
+  padding: 1em;
+  width: 24vw;
+  height: 24vw;
+  min-height: 300px;
+  min-width: 300px;
 }
 
 .album-border {
@@ -40,8 +48,8 @@
   display: flex;
   justify-content: center;
   position: relative;
-  width: 90vw;
-  height: 90vw;
+  width: 100%;
+  height: 100%;
   max-height: 350px;
   max-width: 350px;
 }
@@ -65,12 +73,22 @@
 }
 
 @media only screen and (max-width: 740px) {
+  .album-gallery{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .unit-padding {
-    padding-left: 0;
-    padding-right: 0;
+    width: auto;
+    height: auto;
   }
 
   .album-border {
     padding: 5vw;
+  }
+
+  .album-container {
+    width: 90vw;
+    height: 90vw;
   }
 }

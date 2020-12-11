@@ -1,2 +1,40 @@
 {% extends 'main/base.html' %}
 {% load static %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/merch.css' %}"/>
+{% endblock %}
+
+{% block banner %}
+
+  <div class="title">
+    <h1>MERCHENDISE</h1>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="page">
+
+
+      <div class="merch-gallery">
+
+        <div class="feature">
+          <img class="merch-pic" src="{% static 'img/banner/hope.jpg' %}"/>
+        </div>
+
+        <div class="non-feature">
+          <div class="one">
+            <img class="merch-pic" src="{% static 'img/gallery/pantry.JPG' %}"/>
+          </div>
+          <div class="two">
+            <img class="merch-pic" src="{% static 'img/gallery/bw-producing-two.JPG' %}"/>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+{% endblock %}
