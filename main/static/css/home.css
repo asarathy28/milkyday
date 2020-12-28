@@ -8,7 +8,7 @@
 .bio {
   padding: 1em;
   padding-top: 4em;
-  padding-bottom: 4em;
+  padding-bottom: 0;
   max-width: 900px;
 }
 
@@ -20,18 +20,26 @@
 
 .single-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100%;
   padding-top: 4em;
   padding-bottom: 4em;
-  background-color: #292929; /* dark grey */
+}
+
+.single-title {
+  padding-bottom: 2em;
 }
 
 .single {
-  width: 100%;
-  max-width: 900px;
+  width: auto;
+  max-width: 700px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  background-color: #f8dbff;/*#292929; /* dark grey */
+  padding: 3em;
+  border-radius: 25px;
 }
 
 .coverart {
@@ -46,28 +54,26 @@
 .single-caption{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  border: 1px black solid;
-}
-
-.single-caption h2 {
-  color: white;
-  font-size: 30px;
 }
 
 .single-caption h1 {
-  color: white;
+  color: black;
   font-size: 6vw;
   padding-bottom: 0.5em;
-  border: 1px black solid;
 }
 
 .listen-now {
   font-size: 2vw;
-  padding: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
   align-self: center;
-  border: 1px black solid;
+  border: none;
+  color: white;
+  background-color: #ad5f84; /* magenta */
 }
 
 .listen-now:hover {
@@ -75,6 +81,11 @@
   color:#fff;
 }
 
+.listen-now:focus {
+  border: none;
+  text-decoration: none;
+  outline: none;
+}
 
 
 /* gallery */
@@ -242,7 +253,7 @@
   /* desktop */
 
   .single-caption h1 {
-    font-size: 50px;
+    font-size: 40px;
   }
 
   .listen-now {
