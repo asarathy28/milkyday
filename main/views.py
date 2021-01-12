@@ -58,3 +58,6 @@ def portfolio(request):
 
 def merch(request):
     return render(request, "main/merch.html", {})
+
+def checkout(request):
+    return render(request, "main/checkout-base.html", {})

@@ -66,40 +66,41 @@
         <h1>SPOTIFY PLAYLISTS</h1>
       </div>
 
-      <div class="carousel" id="carousel">
-
+      <div class="carousel-container">
 
         <button type="button" class="panner" id="scroll-left" data-scroll-modifier='-1'>
           <img src="{% static 'img/arrows/left-arrow.svg' %}" alt="left">
         </button>
 
+        <div class="carousel" id="carousel">
 
-        {% for name, id, image in playlists %}
-
-        <div class="spacer">
-        </div>
-
-          {% comment %}<div class="playlist-border">{% endcomment %}
-
-            <div class="playlist-container">
-
-              <img class='playlist-cover' src="{{image}}" alt="{{name}}">
-
-              <iframe class='playlist' src="https://open.spotify.com/embed/playlist/{{id}}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
-            </div>
-
-          {% comment %}</div>{% endcomment %}
+          {% for name, id, image in playlists %}
 
           <div class="spacer">
           </div>
 
-        {% endfor %}
+            {% comment %}<div class="playlist-border">{% endcomment %}
+
+              <div class="playlist-container">
+
+                <img class='playlist-cover' src="{{image}}" alt="{{name}}">
+
+                <iframe class='playlist' src="https://open.spotify.com/embed/playlist/{{id}}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+              </div>
+
+            {% comment %}</div>{% endcomment %}
+
+            <div class="spacer">
+            </div>
+
+          {% endfor %}
+
+        </div>
 
         <button type="button" class="panner" id="scroll-right" data-scroll-modifier='1'>
           <img src="{% static 'img/arrows/right-arrow.svg' %}" alt="right">
         </button>
-
 
       </div>
 
@@ -111,6 +112,8 @@
 {% block js %}
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="{% static 'js/panner.js' %}"></script>
+
+  {% comment %}<script src="{% static 'js/panner.js' %}"></script>{% endcomment %}
+  <script src="{% static 'js/simpleSlide.js' %}"></script>
 
 {% endblock %}

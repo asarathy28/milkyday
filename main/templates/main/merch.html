@@ -8,7 +8,7 @@
 {% block banner %}
 
   <div class="title">
-    <h1>MERCHENDISE</h1>
+    <h1>MERCH</h1>
   </div>
 
 {% endblock %}
@@ -20,17 +20,38 @@
 
       <div class="merch-gallery">
 
-        <div class="feature">
-          <img class="merch-pic" src="{% static 'img/placeholder.jpg' %}"/>
-        </div>
+        <a class="f-a" href="/checkout">
+          <div class="feature">
+            <img class="merch-pic" src="{% static 'img/placeholder.jpg' %}"/>
+            <div class="merch-text">
+              <h1>Hat One</h1>
+              <p>some random text</p>
+            </div>
+          </div>
+        </a>
 
         <div class="non-feature">
-          <div class="one">
-            <img class="merch-pic" src="{% static 'img/placeholder.jpg' %}"/>
-          </div>
-          <div class="two">
-            <img class="merch-pic" src="{% static 'img/placeholder.jpg' %}"/>
-          </div>
+
+          <a href="/checkout">
+            <div class="one">
+              <img class="merch-pic" src="{% static 'img/placeholder.jpg' %}"/>
+              <div class="merch-text">
+                <h1>Hat Two</h1>
+                <p>some random text</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="/checkout">
+            <div class="two">
+                <img class="merch-pic" src="{% static 'img/placeholder.jpg' %}"/>
+                <div class="merch-text">
+                  <h1>Hat Three</h1>
+                  <p>some random text</p>
+                </div>
+            </div>
+          </a>
+
         </div>
 
       </div>

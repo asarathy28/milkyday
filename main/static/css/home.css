@@ -36,7 +36,7 @@
   width: auto;
   max-width: 700px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: #f8dbff;/*#292929; /* dark grey */
   padding: 3em;
   border-radius: 25px;
@@ -152,10 +152,18 @@
   margin-bottom: 2em;
 }
 
+.carousel-container{
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  width: 100%;
+}
+
 .carousel {
   display: flex;
   align-items: center;
   background-color: white;
+  width: 80%;
   overflow: auto;
   white-space: nowrap;
 }
@@ -208,8 +216,17 @@
 
 /* scroll arrows */
 .panner {
-  width: auto;
+  width: 30px;
   background-color: transparent;
+  height: 50px;
+  align-self: center;
+  border: none;
+}
+
+.panner:focus {
+  border: none;
+  text-decoration: none;
+  outline: none;
 }
 
 #scroll-left, #scroll-right {

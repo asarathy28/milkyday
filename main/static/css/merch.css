@@ -10,12 +10,19 @@
   padding: 1em;
 }
 
-.feature {
+.f-a {
   width: 100%;
   display: flex;
   justify-content: center;
   position: relative;
   max-height: 400px;
+}
+
+.feature {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
   padding: 1em;
 }
 
@@ -28,12 +35,20 @@
   margin: 0 auto;
 }
 
+.non-feature a {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 50%;
+  max-height: 300px;
+}
+
 .one,
 .two {
   display: flex;
   justify-content: center;
   position: relative;
-  width: 50%;
+  width: 100%;
   max-height: 300px;
   padding: 1em;
 }
@@ -41,7 +56,14 @@
 .merch-pic {
   object-fit: cover;
   overflow: hidden;
-  with: 100%;
+  width: 100%;
+}
+
+.merch-text{
+  position: absolute;
+  color: white;
+  bottom: 45px;
+  left: 50px;
 }
 
 
