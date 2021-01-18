@@ -3,12 +3,22 @@
   height: 550px;
 }
 
+.home a:link,
+.home a:visited {
+  color: pink;
+}
+
 /* bio section */
 
+.bio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #F7F7F7;
+  padding: 4em;
+}
 .bio {
-  padding: 1em;
-  padding-top: 4em;
-  padding-bottom: 0;
   max-width: 900px;
 }
 

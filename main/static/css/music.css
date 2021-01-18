@@ -1,3 +1,10 @@
+/* Header */
+
+.music a:link,
+.music a:visited {
+  color: pink;
+}
+
  /* page  */
 
 .album-gallery {
