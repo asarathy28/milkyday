@@ -3,6 +3,8 @@ from django.db import models
 from django.utils import timezone
 
 
+INTEGER_CHOICES= [tuple([x,x]) for x in range(1,10)]
+
 class ContactMessage(models.Model):
     subject = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
@@ -12,3 +14,20 @@ class ContactMessage(models.Model):
 
     def __str__ (self):
         return self.subject + " from: " + self.name
+
+class MerchOrder(models.Model):
+    item = models.CharField(max_length=200)
+    email = models.EmailField(max_length=254)
+    quanity= models.IntegerField()
+
+    def __str__ (self):
+        return self.subject + " from: " + self.name
+
+class MerchItem(models.Model):
+    item_name = models.CharField(max_length=200)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    image = models.ImageField()
+    description = models.TextField()
+
+    def __str__ (self):
+        return self.item_name
