@@ -19,52 +19,46 @@
 
 
       <div class="merch-gallery">
+
         <div class="feature">
           <a class="f-a" href="/checkout">
             <div class="pic-container">
-                <img class="merch-pic" src="{% static 'img/placeholder.jpg' %}"/>
+
+                <img class="merch-pic" src="{{f.image.url}}"/>
                 <div class="feature-text">
-                  <h1>Milky Day</h1>
-                  <h1>Banana Bucket Hat</h1>
+                  <h1>{{f.item_line_one}}</h1>
+                  <h1>{{f.item_line_two}}k</h1>
                   <p>
-                    Binggrae’s Banana Flavored Milk (빙스레 바나나맛 우유) is a beverage that most, if not all, South Koreans recognize instantly. Since it was first introduced in 1974, this classic banana milk has had an iconic role in Korea’s modern culture.
+                    {{f.description_one}}
                   </p>
                   <p>
-                    By fusing the design of the banana milk we all love with the Milky Day brand, I present to you: the Milky Day Banana Bucket Hat.
+                    {{f.description_two}}
                   </p>
                 </div>
+
             </div>
           </a>
-        </div>
+        </div
 
         <div class="non-feature">
 
-          <div class="one">
+          {% for i in items %}
+
+          <div class="item">
             <a href="/checkout">
               <div class="pic-container">
-                <img class="merch-pic" src="{% static 'img/placeholder2.jpg' %}"/>
-                <div class="merch-text">
-                  <h1>Milky Day</h1>
-                  <h1>Banana Bucket Hat</h1>
-                  <p>$35.00</p>
-                </div>
-              </div>
-            </a>
-          </div>
+                  <img class="merch-pic" src="{{i.image.url}}"/>
 
-
-          <div class="two">
-            <a href="/checkout">
-              <div class="pic-container">
-                  <img class="merch-pic" src="{% static 'img/placeholder3.jpg' %}"/>
                   <div class="merch-text">
-                    <h1>Milky Day</h1>
-                    <h1>Bucket Hat - Black</h1>
-                    <p>$35.00</p>
+                    <h1>{{i.item_line_one}}</h1>
+                    <h1>{{i.item_line_two}}k</h1>
+                    <p>${{i.price}}</p>
                   </div>
               </div>
             </a>
           </div>
+
+          {% endfor %}
 
         </div>
 

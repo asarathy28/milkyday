@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .milky_spotify import Music
 from .forms import ContactForm
 from .models import MerchItem
+from .models import MerchFeature
 from django.core.mail import send_mail
 from django.conf import settings
 from django.template.loader import render_to_string
@@ -58,8 +59,10 @@ def portfolio(request):
     return render(request, "main/portfolio.html", context)
 
 def merch(request):
+    items = MerchItem.objects.all()
+    feature = MerchFeature.objects.first()
 
-    return render(request, "main/merch.html", {})
+    return render(request, "main/merch.html", {'items':items, 'f':feature})
 
 def checkout(request):
     return render(request, "main/checkout-base.html", {})

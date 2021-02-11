@@ -24,10 +24,22 @@ class MerchOrder(models.Model):
         return self.subject + " from: " + self.name
 
 class MerchItem(models.Model):
-    item_name = models.CharField(max_length=200)
+    item_line_one = models.CharField(max_length=200)
+    item_line_two = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='images/')
     description = models.TextField()
 
     def __str__ (self):
-        return self.item_name
+        return self.item_line_one + " " + self.item_line_two
+
+class MerchFeature(models.Model):
+    item_line_one = models.CharField(max_length=200)
+    item_line_two = models.CharField(max_length=200)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    image = models.ImageField()
+    description_one = models.TextField()
+    description_two = models.TextField()
+
+    def __str__ (self):
+        return self.item_line_one + " " + self.item_line_two
