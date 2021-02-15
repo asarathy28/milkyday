@@ -27,7 +27,7 @@ class MerchItem(models.Model):
     item_line_one = models.CharField(max_length=200)
     item_line_two = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    image = models.ImageField(upload_to='images/')
+    image = models.CharField(max_length=200)
     description = models.TextField()
 
     def __str__ (self):
@@ -37,7 +37,7 @@ class MerchFeature(models.Model):
     item_line_one = models.CharField(max_length=200)
     item_line_two = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    image = models.ImageField()
+    image = models.CharField(max_length=200)
     description_one = models.TextField()
     description_two = models.TextField()
 

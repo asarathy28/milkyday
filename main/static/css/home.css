@@ -136,7 +136,7 @@
 .gallery-pic {
   object-fit: cover;
   overflow: hidden;
-  with: 100%;
+  width: 100%;
 }
 
 
