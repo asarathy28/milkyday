@@ -21,6 +21,8 @@
 .tab {
   overflow: hidden;
   background-color: #f1f1f1;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .tab button {
@@ -32,6 +34,8 @@
   padding: 1.5em;
   transition: 0.3s;
   width: 33.3%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .tab button:hover {
@@ -48,13 +52,15 @@
   align-items: center;
   background: grey;
   padding: 3em;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 .tabcontent {
   display: none;
   width: 100%;
   padding: 6px 12px;
-  background-color: #f1f1f1;
+  background-color: inherit;
   z-index: 1;
 }
 
@@ -104,6 +110,7 @@
 
 .track{
   display: none;
+  background-color: inherit;
 }
 
 .track-container:hover .track{
@@ -149,6 +156,7 @@
   margin-bottom: 4em;
   width: 100%;
   max-width: 1000px;
+  border-radius: 25px;
 }
 
 .form-intro {
