@@ -1,7 +1,38 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/order-form.css' %}"/>
+{% endblock %}
 
 {% block content %}
-CHECK OUT FORM
+
+  <div class="page">
+
+
+    <div class="order-container">
+
+      <form class="order-form" action="" method="post">
+
+        <div class="form-intro">
+          <h1>Order Form</h1>
+          <p>some random filler content!</p>
+        </div>
+
+
+        {% csrf_token %}
+
+        <ul class="form-row">
+
+          {{form.as_ul}}
+
+          <li><button type="submit">Send</button></li>
+
+        </ul>
+
+      </form>
+    </div>
+
+  </div>
+
 {% endblock %}

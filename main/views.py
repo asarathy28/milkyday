@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect
 from .milky_spotify import Music
 from .forms import ContactForm
+from .forms import OrderForm
 from .models import MerchItem
 from .models import MerchFeature
 from django.core.mail import send_mail
 from django.conf import settings
 from django.template.loader import render_to_string
+from django.contrib import messages #import messages
+import requests
 
 
 # Create your views here.
@@ -35,34 +38,79 @@ def portfolio(request):
         print(request.POST)
         form = ContactForm(request.POST)
         if form.is_valid():
+            ''' reCAPTCHA validation '''
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            data = {'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,'response': recaptcha_response}
+            r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+            result = r.json()
 
-            name = request.POST['name']
-            subject = request.POST['subject']
-            message = request.POST['message']
-            email =request.POST['email']
+            print(result)
+
+            if result['success']:
+                name = request.POST['name']
+                subject = request.POST['subject']
+                message = request.POST['message']
+                email =request.POST['email']
 
 
-            context = {'subject':subject, 'message':message, 'name':name, 'email':email}
-            template = render_to_string('main/email-temp.html', context)
+                context = {'subject':subject, 'message':message, 'name':name, 'email':email}
+                template = render_to_string('main/email-temp.html', context)
 
-            send_mail(f'{name} : {subject}', message, settings.EMAIL_HOST_USER, ['milkyday99@gmail.com'], fail_silently=False)
+                send_mail(f'{name} : {subject}', message, settings.EMAIL_HOST_USER, ['milkyday99@gmail.com'], fail_silently=False)
 
-            form.save()
+                form.save()
+                messages.success(request, "Message sent." )
+                return redirect('../home/')
+            messages.error(request, 'Invalid reCAPTCHA. Please try again.')
 
-            return redirect('../home/')
+        messages.error(request, "Error. Message not sent.")
     else:  # 5
         # Create an empty form instance
         form = ContactForm()
 
-    context = {'form':form}
+    context = {'form':form, 'recaptcha_site_key':settings.GOOGLE_RECAPTCHA_SITE_KEY}
 
     return render(request, "main/portfolio.html", context)
 
 def merch(request):
     items = MerchItem.objects.all()
     feature = MerchFeature.objects.first()
+    form = OrderForm()
 
-    return render(request, "main/merch.html", {'items':items, 'f':feature})
+    if request.method == 'POST':
+        print(request.POST)
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            ''' reCAPTCHA validation '''
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            data = {'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,'response': recaptcha_response}
+            r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+            result = r.json()
 
-def checkout(request):
-    return render(request, "main/checkout-base.html", {})
+            print(result)
+
+            if result['success']:
+                name = request.POST['name']
+                item = request.POST['item']
+                email =request.POST['email']
+                quanity = request.POST['quanity']
+
+
+                context = {'name':name, 'item':item, 'quanity':quanity, 'email':email, 'recaptcha_site_key':settings.GOOGLE_RECAPTCHA_SITE_KEY}
+                template = render_to_string('main/order_temp.html', context)
+
+                send_mail(f'{name} : ordering {item}', template, settings.EMAIL_HOST_USER, ['milkyday99@gmail.com'], fail_silently=False)
+
+                form.save()
+                messages.success(request, "Message sent." )
+                return redirect('../home/')
+            messages.error(request, 'Invalid reCAPTCHA. Please try again.')
+
+        messages.error(request, "Error. Message not sent.")
+    else:  # 5
+        # Create an empty form instance
+        form = OrderForm()
+
+    context = {'form':form, 'items':items, 'f':feature, 'recaptcha_site_key':settings.GOOGLE_RECAPTCHA_SITE_KEY}
+
+    return render(request, "main/merch.html", context)

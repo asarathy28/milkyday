@@ -16,9 +16,10 @@ class ContactMessage(models.Model):
         return self.subject + " from: " + self.name
 
 class MerchOrder(models.Model):
+    name = models.CharField(max_length=200)
     item = models.CharField(max_length=200)
     email = models.EmailField(max_length=254)
-    quanity= models.IntegerField()
+    quanity= models.PositiveIntegerField()
 
     def __str__ (self):
         return self.subject + " from: " + self.name

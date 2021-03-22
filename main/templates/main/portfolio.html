@@ -1,6 +1,11 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
+{% block reCAPTCHA %}
+  <!-- reCAPTCHA API -->
+  <script src='https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}'></script>
+{% endblock %}
+
 {% block style %}
   <link rel="stylesheet" href="{% static 'css/portfolio.css' %}"/>
 {% endblock %}
@@ -147,6 +152,15 @@
 
   </div>
 
+  <script>
+    //global grecaptcha
+    grecaptcha.ready(function() {
+      grecaptcha.execute('{{recaptcha_site_key}}', {action: "/portfolio/"}).then(function(token) {
+        document.getElementById('g-recaptcha-response').value = token;
+      });
+    });
+  </script>
+
   <div class="contact-container">
 
     <form class="contact-form" action="" method="post">
@@ -162,6 +176,9 @@
       <ul class="form-row">
 
         {{form.as_ul}}
+
+        <!-- reCAPTCHA input -->
+        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
 
         <li><button type="submit">Send</button></li>
 

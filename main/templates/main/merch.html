@@ -1,8 +1,51 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
+{% block reCAPTCHA %}
+  <!-- reCAPTCHA API -->
+  <script src='https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}'></script>
+{% endblock %}
+
 {% block style %}
   <link rel="stylesheet" href="{% static 'css/merch.css' %}"/>
+{% endblock %}
+
+{% block first %}
+<script>
+  //global grecaptcha
+  grecaptcha.ready(function() {
+    grecaptcha.execute('{{recaptcha_site_key}}', {action: "/contact/"}).then(function(token) {
+      document.getElementById('g-recaptcha-response').value = token;
+    });
+  });
+</script>
+
+  <div class="order-container"  id="myOrder">
+
+    <form class="order-form" action="" method="post" >
+
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+      <div class="form-intro">
+        <h1>Order Form</h1>
+        <p>some random filler content!</p>
+      </div>
+
+      {% csrf_token %}
+
+      <ul class="form-row">
+
+        {{form.as_ul}}
+
+        <!-- reCAPTCHA input -->
+        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+
+        <li><button type="submit">Send</button></li>
+
+      </ul>
+
+    </form>
+  </div>
 {% endblock %}
 
 {% block banner %}
@@ -15,55 +58,78 @@
 
 {% block content %}
 
-    <div class="page">
+  <span onclick="openNav()">open</span>
 
+  <div class="page" id="main">
 
-      <div class="merch-gallery">
+    <div class="merch-gallery">
 
-        <div class="feature">
-          <a class="f-a" href="/checkout">
-            <div class="pic-container">
+      <div class="feature">
+        <span onclick="openNav()">
+          <div class="pic-container">
 
-                <img class="merch-pic" src="{{f.image}}"/>
-                <div class="feature-text">
-                  <h1>{{f.item_line_one}}</h1>
-                  <h1>{{f.item_line_two}}</h1>
-                  <p>
-                    {{f.description_one}}
-                  </p>
-                  <p>
-                    {{f.description_two}}
-                  </p>
-                </div>
-
-            </div>
-          </a>
-        </div
-
-        <div class="non-feature">
-
-          {% for i in items %}
-
-          <div class="item">
-            <a href="/checkout">
-              <div class="pic-container">
-                  <img class="merch-pic" src="{{i.image}}"/>
-
-                  <div class="merch-text">
-                    <h1>{{i.item_line_one}}</h1>
-                    <h1>{{i.item_line_two}}</h1>
-                    <p>${{i.price}}</p>
-                  </div>
+              <img class="merch-pic" src="{{f.image}}"/>
+              <div class="feature-text">
+                <h1>{{f.item_line_one}}</h1>
+                <h1>{{f.item_line_two}}</h1>
+                <p>
+                  {{f.description_one}}
+                </p>
+                <p>
+                  {{f.description_two}}
+                </p>
               </div>
-            </a>
+
           </div>
+        </span>
+      </div
 
-          {% endfor %}
+      <div class="non-feature">
 
+        {% for i in items %}
+
+        <div class="item">
+          <span onclick="openNav()">
+            <div class="pic-container">
+                <img class="merch-pic" src="{{i.image}}"/>
+
+                <div class="merch-text">
+                  <h1>{{i.item_line_one}}</h1>
+                  <h1>{{i.item_line_two}}</h1>
+                  <p>${{i.price}}</p>
+                </div>
+            </div>
+          </span>
         </div>
+
+        {% endfor %}
 
       </div>
 
     </div>
+
+  </div>
+
+  <div class="tint" id="tint">
+
+  </div>
+
+{% endblock %}
+
+{% block js %}
+
+<script>
+  /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+  function openNav() {
+    document.getElementById("myOrder").style.width = "450px";
+    document.getElementById("tint").style.backgroundColor = "#786f78";
+  }
+
+  /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+  function closeNav() {
+    document.getElementById("myOrder").style.width = "0";
+    document.getElementById("tint").style.backgroundColor = "transparent";
+  }
+</script>
 
 {% endblock %}

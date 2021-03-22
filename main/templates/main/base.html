@@ -6,6 +6,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    {% block reCAPTCHA %}
+
+    {% endblock %}
+
     <title>Milky Day</title>
     <link rel="shortcut icon" href="{% static 'img/favicon_io/favicon.ico' type='image/x-icon' %}">
 
@@ -21,6 +25,9 @@
   </head>
 
   <body>
+    {% block first %}
+
+    {% endblock %}
     <header class="banner">
 
       <nav class="menu">
@@ -71,5 +78,6 @@
 
     {% block js %}
     {% endblock %}
+
 
   </body>

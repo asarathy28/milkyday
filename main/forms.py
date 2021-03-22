@@ -9,5 +9,5 @@ class ContactForm(ModelForm):
 
 class OrderForm(ModelForm):
     class Meta:
-        model = ContactMessage
-        fields = '__all__' 
+        model = MerchOrder
+        fields = '__all__'

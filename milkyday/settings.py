@@ -14,6 +14,17 @@ import os
 import dotenv
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
+import os
+from django.contrib.messages import constants as messages
+
+
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-secondary',
+        messages.INFO: 'alert-info',
+        messages.SUCCESS: 'alert-success',
+        messages.WARNING: 'alert-warning',
+        messages.ERROR: 'alert-danger',
+ }
 
 sentry_sdk.init(
     dsn="https://63e024a471124ddab7e469809073994f@o455512.ingest.sentry.io/5447168",
@@ -37,6 +48,10 @@ if os.path.isfile(dotenv_file):
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
+
+GOOGLE_RECAPTCHA_SITE_KEY = os.environ['GOOGLE_RECAPTCHA_SITE_KEY'] #your reCAPTCHA SITE key
+
+GOOGLE_RECAPTCHA_SECRET_KEY = os.environ['GOOGLE_RECAPTCHA_SECRET_KEY'] #your reCAPTCHA SECRET key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False

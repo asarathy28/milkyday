@@ -5,6 +5,18 @@
   color: pink;
 }
 
+.tint {
+  height: 100%;
+  width: 100%;
+  position: fixed; /* keeps the screen covered durning scroll */
+  z-index: 1000; /* puts it on top of everything */
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  opacity: .3; /* so we can see through it */
+  pointer-events: none; /* so we can click through it */
+}
+
 /* gallery */
 
 .merch-gallery {
@@ -87,6 +99,117 @@
 
 .feature-text p {
   padding-top: 1em;
+}
+
+/* order form */
+
+.order-container {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  background-color: grey;
+  color: white;
+}
+.order-form {
+  width: 100%;
+  padding: 2em;
+}
+.order-form a:link,
+.order-form a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.order-form a:hover,
+.order-form a:visited:hover,
+.order-form a:active,
+.order-form a:visited:active {
+  color: pink;
+  /* text-decoration: underline; */
+}
+
+.form-intro {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-intro h1 {
+  margin-bottom: 10px;
+}
+
+.form-row li {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* border: 1px solid RED; */
+}
+
+.form-row li input[type='text'],
+.form-row li input[type='email'] {
+  background-color: #FFFFFF;
+  border: 0;
+  border-radius: 3px;
+  width: 100%;
+
+
+  color: #5D6063;
+  /* border: 1px solid BLUE; */
+}
+
+.form-row li label {
+  /* margin-bottom: 15px; */
+  /* border: 1px solid GREEN; */
+}
+
+.form-row li button {
+  font-size: 16px;
+  font-weight: bold;
+
+  color: #FFFFFF;
+  background-color: #5995DA;
+
+  border: none;
+
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.form-row li button:hover {
+  background-color: #76AEED;
+  margin-bottom: 0;
+}
+
+.form-row li button:active {
+  background-color: #407FC7;
+  margin-bottom: 0;
+}
+
+.order-form .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+@media only screen and (min-width: 640px) {
+  .form-intro {
+    width: 100%;
+  }
+
 }
 
 
