@@ -27,7 +27,7 @@ MESSAGE_TAGS = {
  }
 
 sentry_sdk.init(
-    dsn="https://63e024a471124ddab7e469809073994f@o455512.ingest.sentry.io/5447168",
+    dsn="https://f1328337369d43588643db452986b0eb:7ae7614f6f4940b7959e333919d858b2@o497213.ingest.sentry.io/5573000",
     integrations=[DjangoIntegration()],
     traces_sample_rate=1.0,
 
@@ -54,7 +54,7 @@ GOOGLE_RECAPTCHA_SITE_KEY = os.environ['GOOGLE_RECAPTCHA_SITE_KEY'] #your reCAPT
 GOOGLE_RECAPTCHA_SECRET_KEY = os.environ['GOOGLE_RECAPTCHA_SECRET_KEY'] #your reCAPTCHA SECRET key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['milkyday.herokuapp.com', '127.0.0.1' ]
 
