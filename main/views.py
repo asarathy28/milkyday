@@ -56,7 +56,7 @@ def portfolio(request):
                 context = {'subject':subject, 'message':message, 'name':name, 'email':email}
                 template = render_to_string('main/email-temp.html', context)
 
-                send_mail(f'{name} : {subject}', message, settings.EMAIL_HOST_USER, ['milkyday99@gmail.com'], fail_silently=False)
+                send_mail(f'{name} : {subject}', message, settings.EMAIL_HOST_USER, ['milkyday.mgmt@gmail.com'], fail_silently=False)
 
                 form.save()
                 messages.success(request, "Message sent." )
@@ -99,7 +99,7 @@ def merch(request):
                 context = {'name':name, 'item':item, 'quanity':quanity, 'email':email, 'recaptcha_site_key':settings.GOOGLE_RECAPTCHA_SITE_KEY}
                 template = render_to_string('main/order_temp.html', context)
 
-                send_mail(f'{name} : ordering {item}', template, settings.EMAIL_HOST_USER, ['milkyday99@gmail.com'], fail_silently=False)
+                send_mail(f'{name} : ordering {item}', template, settings.EMAIL_HOST_USER, ['milkyday.mgmt@gmail.com'], fail_silently=False)
 
                 form.save()
                 messages.success(request, "Message sent." )

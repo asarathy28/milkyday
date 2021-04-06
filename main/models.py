@@ -22,7 +22,7 @@ class MerchOrder(models.Model):
     quanity= models.PositiveIntegerField()
 
     def __str__ (self):
-        return self.subject + " from: " + self.name
+        return self.item + " from: " + self.name
 
 class MerchItem(models.Model):
     item_line_one = models.CharField(max_length=200)
