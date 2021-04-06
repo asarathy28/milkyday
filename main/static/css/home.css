@@ -47,10 +47,11 @@
   max-width: 700px;
   display: flex;
   justify-content: space-around;
-  background-color: #f8dbff;/*#292929; /* dark grey */
+  background-color: rgba(142, 208, 224, 0.86);/*#292929; /* dark grey */
   padding: 3em;
   border-radius: 25px;
 }
+
 
 .coverart {
   width: 50%;
@@ -69,7 +70,7 @@
 }
 
 .single-caption h1 {
-  color: black;
+  color: white;
   font-size: 6vw;
   padding-bottom: 0.5em;
 }
@@ -137,6 +138,25 @@
   object-fit: cover;
   overflow: hidden;
   width: 100%;
+}
+
+/* youtube */
+
+.youtube-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  background-color: black;/* #292929; /* dark grey */
+}
+
+.youtube {
+  width: 60vw;
+  height: 36vw;
+  /* width="560" height="315" */
 }
 
 
