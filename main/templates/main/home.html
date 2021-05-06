@@ -16,7 +16,7 @@
     <h1>MILKY DAY</h1>
   </div>
 
-  <img class="gallery-pic" src="{% static 'img/banner/dark-hope.jpg' %}"/>
+  <img class="gallery-pic" src="{{s.banner_pic}}"/>
 
 {% endblock %}
 
@@ -26,13 +26,13 @@
 
       <div class="bio-container">
         <div class="bio">
-          <p>Milky Day is an lofi/R&B artist from New Zealand, currently based in Los Angeles. He first began learning to play the piano at the age of 8 years old. In 2017, he fell in love with writing music and began producing, recording, and mixing his own tracks. His style ranges from lo-fi, rnb, to hip-hop, and generally has a chilled-out quality. Some of his popular tracks include “Take it Slow”, “Fool”, and “Feeling Blue”.</p>
+          <p>{{s.bio}}</p>
         </div>
       </div>
 
       <div class="single-container">
         <h1 class="single-title">NEW SINGLE</h1>
-        <div class="single">
+        <div class="single" style="background-color:{{s.background_color}};">
 
 
           <div class="coverart">
@@ -40,8 +40,8 @@
           </div>
 
           <div class="single-caption">
-            <h1>{{new_single.name}}</h1>
-            <button class="listen-now" type="button" name="button">LISTEN NOW</button>
+            <h1 style="color:{{s.text_color}};">{{new_single.name}}</h1>
+            <button class="listen-now" onclick="location.href='https://open.spotify.com/album/{{new_single.id}}'" type="button" style="color:{{s.button_text_color}};background-color:{{s.button_color}};" name="button">LISTEN NOW</button>
           </div>
 
         </div>
@@ -51,15 +51,15 @@
 
         <div class="one-and-two">
           <div class="one">
-            <img class="gallery-pic" src="{% static 'img/gallery/pantry.JPG' %}"/>
+            <img class="gallery-pic" src="{{s.pic_one}}"/>
           </div>
           <div class="two">
-            <img class="gallery-pic" src="{% static 'img/gallery/bw-producing-two.JPG' %}"/>
+            <img class="gallery-pic" src="{{s.pic_two}}"/>
           </div>
         </div>
 
         <div class="three">
-          <img class="gallery-pic" src="{% static 'img/gallery/no-milky.jpeg' %}"/>
+          <img class="gallery-pic" src="{{s.pic_three}}"/>
         </div>
 
       </div>
@@ -68,7 +68,7 @@
 
     <div class="youtube-container">
 
-      <iframe class="youtube" src="https://www.youtube-nocookie.com/embed/rolEB-9OxJE?&rel=0&autoplay=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="youtube" src="https://www.youtube-nocookie.com/embed/{{s.video_link}}?&rel=0&autoplay=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     </div>
 

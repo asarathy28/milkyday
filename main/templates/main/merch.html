@@ -28,7 +28,7 @@
 
       <div class="form-intro">
         <h1>Order Form</h1>
-        <p>some random filler content!</p>
+        <p>Fill in this form and I'll reply asap with payment & shipping details :)</p>
       </div>
 
       {% csrf_token %}
@@ -122,8 +122,15 @@
 <script>
   /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
   function openNav() {
-    document.getElementById("myOrder").style.width = "450px";
-    document.getElementById("tint").style.backgroundColor = "#786f78";
+    if(screen.width>=794)
+    {
+      document.getElementById("myOrder").style.width = "450px";
+      document.getElementById("tint").style.backgroundColor = "#786f78";
+    }
+    else {
+      document.getElementById("myOrder").style.width = "100%";
+      document.getElementById("tint").style.backgroundColor = "#786f78";
+    }
   }
 
   /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */

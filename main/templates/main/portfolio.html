@@ -13,7 +13,7 @@
 {% block banner %}
 
   <div class="title">
-    <h1>PORTFOLIO</h1>
+    <h1><span class="short-title">PORT.</span><span class="full-title">PORTFOLIO</span></h1>
   </div>
 
 {% endblock %}
@@ -25,8 +25,10 @@
     <!-- Tab links -->
     <div class="tab">
       <button class="tablinks" onclick="openTab(event, 'Production')" id="defaultOpen">PRODUCTION</button>
-        <button class="tablinks" onclick="openTab(event, 'Mixing')">MIXING</button>
+      <button class="tablinks" onclick="openTab(event, 'Mixing')">MIXING</button>
       <button class="tablinks" onclick="openTab(event, 'Features')">FEATURES</button>
+      <button class="tablinks" onclick="openTab(event, 'Music-Lessons')">MUSIC LESSONS</button>
+
     </div>
 
     <!-- Tab content -->
@@ -41,7 +43,7 @@
 
             <div class="track-container">
 
-              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/858661516&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{s.production_one}}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
 
             </div>
 
@@ -51,7 +53,7 @@
 
             <div class="track-container">
 
-              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/575690805&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{s.production_two}}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
 
             </div>
 
@@ -61,7 +63,7 @@
 
             <div class="track-container">
 
-              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/920389336&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{s.production_three}}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
 
             </div>
 
@@ -80,7 +82,7 @@
 
             <div class="track-container">
 
-              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/929706670&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{s.mixing_one}}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
 
             </div>
 
@@ -90,7 +92,7 @@
 
             <div class="track-container">
 
-              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/918990364&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{s.mixing_two}}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
 
             </div>
 
@@ -100,7 +102,7 @@
 
             <div class="track-container">
 
-              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/875974234&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{s.mixing_three}}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
 
             </div>
 
@@ -118,7 +120,7 @@
 
             <div class="track-container">
 
-              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/912277021&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{s.features_one}}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
 
             </div>
 
@@ -128,7 +130,7 @@
 
             <div class="track-container">
 
-              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/880125205&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{s.features_two}}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
 
             </div>
 
@@ -138,7 +140,7 @@
 
             <div class="track-container">
 
-              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/981876520&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+              <iframe frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{s.features_three}}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
 
             </div>
 
@@ -146,6 +148,17 @@
 
 
         </div>
+      </div>
+
+      <div id="Music-Lessons" class="tabcontent">
+
+        <div class="track-gallery">
+
+          <p>For rates on private music lessons (piano, production, songwriting, etc.), please fill in the contact form below.</p>
+
+
+        </div>
+
       </div>
 
     </div>

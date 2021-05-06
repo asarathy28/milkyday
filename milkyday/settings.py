@@ -56,7 +56,7 @@ GOOGLE_RECAPTCHA_SECRET_KEY = os.environ['GOOGLE_RECAPTCHA_SECRET_KEY'] #your re
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['milkyday.herokuapp.com', '127.0.0.1' ]
+ALLOWED_HOSTS = ['milkyday.herokuapp.com', '127.0.0.1', 'www.itsmilkyday.com' ]
 
 EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']

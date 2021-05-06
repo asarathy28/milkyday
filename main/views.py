@@ -4,6 +4,8 @@ from .forms import ContactForm
 from .forms import OrderForm
 from .models import MerchItem
 from .models import MerchFeature
+from .models import HomeSettings
+from .models import PortfolioSettings
 from django.core.mail import send_mail
 from django.conf import settings
 from django.template.loader import render_to_string
@@ -13,13 +15,13 @@ import requests
 
 # Create your views here.
 def home(request):
-
+    h_settings = HomeSettings.objects.first()
     myMusic = Music()
 
-    new_single = {'name':myMusic.ns_name, 'image':myMusic.ns_image}
+    new_single = {'name':myMusic.ns_name, 'image':myMusic.ns_image, 'id':myMusic.ns_id}
     playlists = zip(myMusic.pl_name, myMusic.pl_id, myMusic.pl_image)
 
-    return render(request, "main/home.html", {'new_single':new_single, 'playlists':playlists})
+    return render(request, "main/home.html", {'new_single':new_single, 'playlists':playlists, 's':h_settings})
 
 def music(request):
     myMusic = Music()
@@ -31,7 +33,7 @@ def music(request):
     return render(request, "main/music.html", {'albums':albums})
 
 def portfolio(request):
-
+    p_settings = PortfolioSettings.objects.first()
     form = ContactForm()
 
     if request.method == 'POST':
@@ -68,7 +70,7 @@ def portfolio(request):
         # Create an empty form instance
         form = ContactForm()
 
-    context = {'form':form, 'recaptcha_site_key':settings.GOOGLE_RECAPTCHA_SITE_KEY}
+    context = {'form':form, 'recaptcha_site_key':settings.GOOGLE_RECAPTCHA_SITE_KEY, 's':p_settings}
 
     return render(request, "main/portfolio.html", context)
 

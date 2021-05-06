@@ -37,6 +37,7 @@ class Music():
 
         self.ns_name = self.ns['items'][0]['name']
         self.ns_image = self.ns['items'][0]['images'][0]['url']
+        self.ns_id =  self.ns['items'][0]['id']
 
 
         self.playlists = self.sp.user_playlists(self.user, limit=12, offset=0) #'1216336460'
