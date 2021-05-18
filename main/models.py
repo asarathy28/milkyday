@@ -41,6 +41,7 @@ class MerchFeature(models.Model):
     item_line_two = models.CharField(max_length=200)
     price = models.CharField(max_length=200)
     image = models.CharField(max_length=200)
+    mobile_image = models.CharField(max_length=200)
     description_one = models.TextField()
     description_two = models.TextField()
 
