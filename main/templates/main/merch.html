@@ -65,14 +65,14 @@
       <div class="feature">
         <span onclick="openNav()">
           <div class="pic-container">
-              
+
 
               {% comment %}<img class="merch-pic" src="{{f.image}}"/>{% endcomment %}
               <picture>
                 <source media='(min-width: 701px)'
                         srcset="{{f.image}}"/>
                 <source media='(max-width: 700px)'
-                        srcset="{% static 'img/gallery/no-milky.jpeg' %}"/>
+                        srcset="{{f.mobile_image}}"/>
                 <img class="merch-pic" src="{{f.image}}"/>
               </picture>
 
